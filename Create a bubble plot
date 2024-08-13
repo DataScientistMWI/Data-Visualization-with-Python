@@ -1,0 +1,14 @@
+# Sample seasonality data
+seasonality_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                    'Sales': [50000, 60000, 70000, 80000, 90000],
+                    'Season': [1, 2, 1, 2, 1]}  # Season 1 or 2
+seasonality_df = pd.DataFrame(seasonality_data)
+
+# Create a bubble plot
+plt.figure(figsize=(10, 5))
+plt.scatter(seasonality_df['Month'], seasonality_df['Sales'], s=seasonality_df['Season']*1000, alpha=0.5)
+plt.title('Impact of Seasonality on Automobile Sales')
+plt.xlabel('Month')
+plt.ylabel('Sales')
+plt.savefig('Bubble.png')
+plt.show()
